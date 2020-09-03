@@ -7,11 +7,13 @@
 //import react.js
 import React from 'react'
 //import MovieList.js
-import MovieList from './MovieList.js'
+import MovieList from './MovieList.jsx'
 //import exampleMovies.js
 import exampleMovies from '../Data/exampleMovies.js'
 //import searchBar
-import SearchBar from './SearchBar.js'
+import SearchBar from './SearchBar.jsx'
+//import AddMovie
+import AddMovie from './AddMovie.jsx'
 //import CSS somehow?
 import  '../main.css';
 
@@ -23,14 +25,14 @@ class App extends React.Component {
       inputValue: '',
     }
   }
-
+  //detects changes to input in the main searchBar
   searchBarChangeHandler(term) {
     this.setState({
       inputValue: term
     }, console.log('input value is: ', this.state.inputValue));
 
   }
-
+  //filters the movies prop based on what is in the input field above
   searchButtonClick() {
     console.log(this.state.inputValue)
     var filteredMovies = []
@@ -40,6 +42,7 @@ class App extends React.Component {
       }
     })
     if (filteredMovies.length === 0) {
+      //oops text very important
       var oopsText = [{title: "Sorry, we dont have that one. please refresh!"}]
       this.setState({
         movies: oopsText,
@@ -49,13 +52,12 @@ class App extends React.Component {
       movies: filteredMovies,
     })
     }
-
     }
-
+    //refreshes the page (WILL LIKELY DELETE ANY MOVIES ADDED BY USER)
     refreshButtonClick() {
       location.reload();
     }
-
+  //render function that determines the display of everything
   render() {
     return (
     <div>

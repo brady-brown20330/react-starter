@@ -8,7 +8,7 @@ It should return that in a div i think
 //import react
 import React from 'react'
 //import movieListEntry
-import MovieListEntry from './MovieListEntry'
+import MovieListEntry from './MovieListEntry.jsx'
 
 var MovieList = function(props) {
   return (

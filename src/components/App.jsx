@@ -23,18 +23,18 @@ class App extends React.Component {
     this.state = {
       movies: exampleMovies,
       inputValue: '',
+      newMovieInput: '',
     }
   }
   //detects changes to input in the main searchBar
-  searchBarChangeHandler(term) {
+  searchBarChangeHandler(input) {
     this.setState({
-      inputValue: term
-    }, console.log('input value is: ', this.state.inputValue));
+      inputValue: input
+    });
 
   }
   //filters the movies prop based on what is in the input field above
   searchButtonClick() {
-    console.log(this.state.inputValue)
     var filteredMovies = []
     this.state.movies.forEach(movie => {
       if (movie.title.toLowerCase().includes(this.state.inputValue.toLowerCase())) {
@@ -57,10 +57,37 @@ class App extends React.Component {
     refreshButtonClick() {
       location.reload();
     }
+
+    //should detect changes to the AddMovie searchbar
+    newMovieChangeHandler(input) {
+      this.setState({
+        newMovieInput: input
+      });
+    }
+
+    //should add the input value to the movies prop
+    addMovie(input) {
+      var input = this.state.newMovieInput
+      console.log(input)
+      var newMovieList = this.state.movies;
+      var newMovie = {title: input};
+      newMovieList.push(newMovie)
+     console.log(newMovie)
+      this.setState({
+        movies: newMovieList,
+      });
+
+
+    }
+
+
   //render function that determines the display of everything
   render() {
     return (
     <div>
+      <div>
+        <AddMovie newMovie={this.state.newMovieInput} changeHandler={this.newMovieChangeHandler.bind(this)} clickHandler={this.addMovie.bind(this)}/>
+      </div>
       <div>
         <SearchBar inputValue={this.state.inputValue} changeHandler={this.searchBarChangeHandler.bind(this)} clickHandler={this.searchButtonClick.bind(this)} refreshHandler={this.refreshButtonClick.bind(this)}/>
       </div>

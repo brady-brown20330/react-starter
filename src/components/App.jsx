@@ -21,7 +21,7 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      movies: exampleMovies,
+      movies: [],
       inputValue: '',
       newMovieInput: '',
     }
@@ -68,9 +68,9 @@ class App extends React.Component {
     //should add the input value to the movies prop
     addMovie(input) {
       var input = this.state.newMovieInput
-      console.log(input)
+      // console.log(input)
       var newMovieList = this.state.movies;
-      var newMovie = {title: input};
+      var newMovie = {title: input, };
       newMovieList.push(newMovie)
      console.log(newMovie)
       this.setState({

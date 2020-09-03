@@ -1,11 +1,18 @@
+//import react
 import React from 'react';
 
-var MovieListEntry = function (props) {
-  return (
-    <div className="movie">
-      {props.movie.title}
-    </div>
-  )
-}
 
-export default MovieListEntry;
+/**
+ * MovieListEntry ought to take in props from MovieList and return them in a div
+ */
+
+ var MovieListEntry = function (props) {
+   return (
+     <div className='movie'>
+       {props.movie.title}
+     </div>
+   )
+ }
+
+//export MovieListEntry
+export default MovieListEntry

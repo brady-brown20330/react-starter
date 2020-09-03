@@ -1,25 +1,24 @@
 /*
-MovieList component that:
-
--should be functional
--should contain everything to do with displaying the hardcoded movie data from exampleMovies.js
-
-
+MovieList should take in props from the App
+It should be written as a functional component
+it should call map on the props passed down from App and call MovieListEntry on each movie
+It should return that in a div i think
 */
-import React from 'react';
+
+//import react
+import React from 'react'
+//import movieListEntry
 import MovieListEntry from './MovieListEntry'
 
-function MovieList(props) {
-//  console.log(props.movies)
- return (
- <div>
-   {console.log(props)}
-   {props.movies.map((movie, index) =>(
-   <MovieListEntry movie={movie} key={index}/>
-   ))}
- </div>
- )
+var MovieList = function(props) {
+  return (
+    <div>
+      {props.movies.map((movie, index) => (
+        <MovieListEntry movie={movie} key={index} />
+      ))}
+    </div>
+  )
 }
 
-
+//export MovieList
 export default MovieList

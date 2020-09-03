@@ -1,8 +1,24 @@
+body {
+  background-color:antiquewhite;
+}
 
-/*
+.main-title {
+  text-align: center;
+  font: large;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
 .movie {
-  border: 2ch;
-} */
+  text-align: center;
+  margin: 1em;
+  padding: 1em;
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+  font-style: oblique;
+}
 
 
 /*

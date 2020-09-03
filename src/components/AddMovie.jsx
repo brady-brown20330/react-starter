@@ -2,9 +2,9 @@ import React from 'react'
 import App from './App.jsx'
 var AddMovie = function (props) {
 return (
-  <div>
+  <div className="addBar">
   <input type='text' value={props.newMovieInput} onChange={(event) => props.changeHandler(event.target.value)} placeholder='Have something you want added?' />
-  <button onClick={() => props.clickHandler()}>Add Movie</button>
+  <button className="button" onClick={() => props.clickHandler()}>Add Movie</button>
   </div>
 )
 }

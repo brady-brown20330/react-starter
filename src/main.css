@@ -1,24 +1,47 @@
 body {
-  background-color:antiquewhite;
+  background-color:#222831;
 }
 
 .main-title {
   text-align: center;
   font: large;
+  color: #eeeeee;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.searchBar {
+  background-color: #393e46;
+  color: #eeeeee;
+  align-self: center;
+}
 
+.button {
+  color: #393e46;
+  background-color: #eeeeee;
+  align-self: center;
+  margin: 10px;
+  border-style: inset;
+  font-family: sans-serif;
+}
 
+.addBar {
+  background-color: #393e46;
+  color: #eeeeee;
+  align-self: center;
+}
 .movie {
   text-align: center;
   margin: 1em;
   padding: 1em;
   border: 2px;
-  border-color: black;
-  border-style: solid;
-  font-style: oblique;
+  border-color: #00adb5;
+  background-color: #393e46;
+  color: #eeeeee;
+  border-style: groove;
+  font-family: sans-serif;
 }
+
+
 
 
 /*

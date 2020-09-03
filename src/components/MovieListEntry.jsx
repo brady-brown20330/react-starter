@@ -10,6 +10,7 @@ import React from 'react';
    return (
      <div className='movie'>
        {props.movie.title}
+       <button className='button'>Watched</button>
      </div>
    )
  }

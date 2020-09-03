@@ -10,6 +10,8 @@ import React from 'react'
 import MovieList from './MovieList.js'
 //import exampleMovies.js
 import exampleMovies from '../Data/exampleMovies.js'
+//import searchBar
+import SearchBar from './SearchBar.js'
 //import CSS somehow?
 import  '../main.css';
 
@@ -18,14 +20,36 @@ class App extends React.Component {
     super(props);
     this.state = {
       movies: exampleMovies,
+      inputValue: '',
     }
   }
+
+  searchBarChangeHandler(term) {
+    this.setState({
+      inputValue: term
+    }, console.log('input value is: ', this.state.inputValue));
+
+  }
+
+  searchButtonClick() {
+    console.log(this.state.inputValue)
+    this.setState({})
+    this.state.movies.filter(movie => {
+      return movie.title.toLowerCase().includes(this.state.inputValue.toLowerCase)
+    });
+    }
 
   render() {
     return (
     <div>
+      <div>
+        <SearchBar inputValue={this.state.inputValue} changeHandler={this.searchBarChangeHandler.bind(this)} clickHandler={this.searchButtonClick.bind(this)}/>
+      </div>
+
+    <div>
       <MovieList movies={this.state.movies}/>
     </div>
+  </div>
     )
   }
 }

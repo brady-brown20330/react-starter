@@ -33,17 +33,34 @@ class App extends React.Component {
 
   searchButtonClick() {
     console.log(this.state.inputValue)
-    this.setState({})
-    this.state.movies.filter(movie => {
-      return movie.title.toLowerCase().includes(this.state.inputValue.toLowerCase)
-    });
+    var filteredMovies = []
+    this.state.movies.forEach(movie => {
+      if (movie.title.toLowerCase().includes(this.state.inputValue.toLowerCase())) {
+      filteredMovies.push(movie)
+      }
+    })
+    if (filteredMovies.length === 0) {
+      var oopsText = [{title: "Sorry, we dont have that one. please refresh!"}]
+      this.setState({
+        movies: oopsText,
+      })
+    } else {
+      this.setState({
+      movies: filteredMovies,
+    })
+    }
+
+    }
+
+    refreshButtonClick() {
+      location.reload();
     }
 
   render() {
     return (
     <div>
       <div>
-        <SearchBar inputValue={this.state.inputValue} changeHandler={this.searchBarChangeHandler.bind(this)} clickHandler={this.searchButtonClick.bind(this)}/>
+        <SearchBar inputValue={this.state.inputValue} changeHandler={this.searchBarChangeHandler.bind(this)} clickHandler={this.searchButtonClick.bind(this)} refreshHandler={this.refreshButtonClick.bind(this)}/>
       </div>
 
     <div>

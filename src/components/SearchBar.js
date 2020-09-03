@@ -7,6 +7,7 @@ var SearchBar = function (props) {
     <button onClick={() => props.clickHandler()}>
       <span>Submit</span>
     </button>
+    <button onClick={() => props.refreshHandler()}>Refresh</button>
     </div>
   )
 }

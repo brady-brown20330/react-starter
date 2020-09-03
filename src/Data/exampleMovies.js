@@ -1,4 +1,4 @@
-var movies = [
+var exampleMovies = [
   {title: 'Mean Girls'},
   {title: 'Hackers'},
   {title: 'The Grey'},

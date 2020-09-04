@@ -31,6 +31,7 @@ body {
   margin: 10px;
   border-style: inset;
   font-family: sans-serif;
+  float: right;
 }
 
 .geryButton {
@@ -40,15 +41,7 @@ body {
   margin: 10px;
   border-style: inset;
   font-family: sans-serif;
-}
-
-.watchButton {
-  color: #393e46;
-  background-color: #eeeeee;
   float: right;
-  margin: 10px;
-  border-style: inset;
-  font-family: sans-serif;
 }
 
 .addBar {

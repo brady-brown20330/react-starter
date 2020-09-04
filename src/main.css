@@ -24,6 +24,33 @@ body {
   font-family: sans-serif;
 }
 
+.greenButton {
+  color: #393e46;
+  background-color: green;
+  align-self: center;
+  margin: 10px;
+  border-style: inset;
+  font-family: sans-serif;
+}
+
+.geryButton {
+  color: #393e46;
+  background-color: red;
+  align-self: center;
+  margin: 10px;
+  border-style: inset;
+  font-family: sans-serif;
+}
+
+.watchButton {
+  color: #393e46;
+  background-color: #eeeeee;
+  float: right;
+  margin: 10px;
+  border-style: inset;
+  font-family: sans-serif;
+}
+
 .addBar {
   background-color: #393e46;
   color: #eeeeee;
@@ -39,6 +66,7 @@ body {
   color: #eeeeee;
   border-style: groove;
   font-family: sans-serif;
+  width: 90%;
 }
 
 

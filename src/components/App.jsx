@@ -8,6 +8,8 @@
 import React from 'react'
 //import MovieList.js
 import MovieList from './MovieList.jsx'
+//import MovieListEntry
+import MovieListEntry from './MovieListEntry.jsx'
 //import exampleMovies.js
 import exampleMovies from '../Data/exampleMovies.js'
 //import searchBar
@@ -24,6 +26,8 @@ class App extends React.Component {
       movies: exampleMovies,
       inputValue: '',
       newMovieInput: '',
+      watched : 'Watched',
+      unwatched: 'Unwatched'
     }
   }
   //detects changes to input in the main searchBar
@@ -61,7 +65,7 @@ class App extends React.Component {
     //should detect changes to the AddMovie searchbar
     newMovieChangeHandler(input) {
       this.setState({
-        newMovieInput: input
+        newMovieInput: input,
       });
     }
 
@@ -70,15 +74,15 @@ class App extends React.Component {
       var input = this.state.newMovieInput
       // console.log(input)
       var newMovieList = this.state.movies;
-      var newMovie = {title: input, };
+      var newMovie = {title: input,  watched: false};
       newMovieList.push(newMovie)
      console.log(newMovie)
       this.setState({
         movies: newMovieList,
       });
-
-
     }
+
+
 
 
   //render function that determines the display of everything
